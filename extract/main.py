@@ -1,7 +1,8 @@
 import requests
-import datetime
 import os
 import json
+import base64
+from datetime import date, timedelta
 from sodapy import Socrata
 from google.cloud import storage
 
@@ -22,25 +23,28 @@ def load_creds():
 
     return apptoken, username, password
 
-def get_311_data(from_when, limit):
+def get_311_data(from_when):
     apptoken, username, password = load_creds()
     socrata_client = Socrata("data.cityofnewyork.us", 
                         apptoken, username, password)
 
     results = socrata_client.get("fhrw-4uyv", 
                         where = "created_date > '{}'".format(from_when),
-                        limit = limit)
+                        limit = 8000)
     return(results) 
 
-def fetch_and_write(request):
-    request_json = request.get_json()
-    date = request_json['date']
-    limit = request_json['limit']
+def fetch_and_write(data, context):
+    action = base64.b64decode(data['data']).decode('utf-8')
+    yesterday = date.today() - timedelta(1)
+    yesterday = str(yesterday)[:10]
 
-    data = get_311_data(date, limit) 
-    data = '\n'.join(json.dumps(item) for item in data)
+    if (action == "download!"):
+        payload = get_311_data(yesterday) 
+        payload = '\n'.join(json.dumps(item) for item in payload)
 
-    file_name = "311data_{}.json".format(date.replace("-", ""))
-    storage_client.get_bucket(STORAGE_BUCKET) \
-        .blob(file_name) \
-        .upload_from_string(data)
+        file_name = "311data_{}.json".format(yesterday.replace("-", ""))
+        storage_client.get_bucket(STORAGE_BUCKET) \
+            .blob(file_name) \
+            .upload_from_string(payload)
+    else:
+        print("No instructions received.")
