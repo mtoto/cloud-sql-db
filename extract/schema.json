@@ -1,0 +1,174 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "address_type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "agency",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "agency_name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "bbl",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "borough",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "city",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "closed_date",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "community_board",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "complaint_type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "created_date",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "cross_street_1",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "cross_street_2",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "descriptor",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "due_date",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "facility_type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "incident_address",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "incident_zip",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "latitude",
+    "type": "FLOAT"
+  },
+  {
+    "fields": [
+      {
+        "mode": "REPEATED",
+        "name": "coordinates",
+        "type": "FLOAT"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "type",
+        "type": "STRING"
+      }
+    ],
+    "mode": "NULLABLE",
+    "name": "location",
+    "type": "RECORD"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "location_type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "longitude",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "open_data_channel_type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "park_borough",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "park_facility_name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "resolution_action_updated_date",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "resolution_description",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "status",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "street_name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "taxi_company_borough",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "unique_key",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "x_coordinate_state_plane",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "y_coordinate_state_plane",
+    "type": "INTEGER"
+  }
+]
