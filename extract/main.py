@@ -29,7 +29,7 @@ def get_311_data(from_when):
                         apptoken, username, password)
 
     results = socrata_client.get("fhrw-4uyv", 
-                        where = "created_date > '{}'".format(from_when),
+                        where = "created_date >= '{}'".format(from_when),
                         limit = 8000)
     return(results) 
 
