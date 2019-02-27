@@ -21,5 +21,5 @@ select
 from `dbt-sql.311raw.data` 
 
 {% if is_incremental() %}
-  where created_date > (select max(created_date) from {{ this }})
+  where created_date > (select max(timestamp_created) from {{ this }})
 {% endif %}
