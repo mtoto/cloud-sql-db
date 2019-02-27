@@ -18,12 +18,12 @@ select
 
   count("*") as all_complaints 
 from clean_data
+where complaint_type like "Noise%"
 
 {% if is_incremental() %}
-  where timestamp_created > (select max(timestamp_created) from {{ this }})
+  and timestamp_created > (select max(timestamp_created) from {{ this }})
 {% endif %}
 
-where complaint_type like "Noise%"
 group by 1
 order by 1 asc
 
