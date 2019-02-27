@@ -26,6 +26,21 @@
   },
   {
     "mode": "NULLABLE",
+    "name": "bridge_highway_direction",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "bridge_highway_name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "bridge_highway_segment",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
     "name": "city",
     "type": "STRING"
   },
@@ -86,6 +101,16 @@
   },
   {
     "mode": "NULLABLE",
+    "name": "intersection_street_1",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "intersection_street_2",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
     "name": "latitude",
     "type": "FLOAT"
   },
@@ -143,6 +168,11 @@
   },
   {
     "mode": "NULLABLE",
+    "name": "road_ramp",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
     "name": "status",
     "type": "STRING"
   },
@@ -154,6 +184,11 @@
   {
     "mode": "NULLABLE",
     "name": "taxi_company_borough",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "taxi_pick_up_location",
     "type": "STRING"
   },
   {
