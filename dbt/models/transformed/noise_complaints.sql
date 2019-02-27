@@ -21,7 +21,7 @@ from clean_data
 where complaint_type like "Noise%"
 
 {% if is_incremental() %}
-  and timestamp_created > (select max(timestamp_created) from {{ this }})
+  and date_created > (select max(date_created) from {{ this }})
 {% endif %}
 
 group by 1
