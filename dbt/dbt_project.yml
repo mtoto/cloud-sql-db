@@ -28,4 +28,3 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   test_package:
     enabled: true # can switch on and off whether u need to run by default
-    materialized: view

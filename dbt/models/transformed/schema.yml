@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: noise_complaints
+    description: Table containing the number of residential, commercial and total daily noise complaints in New York City.
+    
+    columns:      
+        - name: date_created
+          description: Date complaint was created.
+          tests: 
+            - unique
+            
+        - name: residential
+          description: Number of residential noise complaints.
+          
+        - name: commercial
+          description: Number of commercial noise complaints.
+          
+        - name: all_complaints
+          description: Total number of noise complaints in New York City.
+          
+  - name: rolling_residential
+    description: View containing rolling average of daily noise complaints in New York City.
+    
+    columns:      
+        - name: date_created
+          description: Date complaint was created.
+            
+        - name: residential
+          description: Number of residential noise complaints.
+          
+        - name: rolling_avg
+          description: 7-day moving average of residential noise complaints.
+          
+  - name: top5_complaints
+    description: View containing the top 5 complaints in New York City.
+    
+    columns:      
+        - name: complaint_type
+          description: Type of complaint.
+            
+        - name: nr_complaints
+          description: Total number of complaints.

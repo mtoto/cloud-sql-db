@@ -5,10 +5,9 @@
 }}
 
 select 
-  created_date as timestamp_created,
-  date( created_date ) as date_created,
-  time( created_date ) as time_created,
-  created_date as date_time,
+  datetime(created_date, "America/New_York") as datetime_created,
+  date( created_date, "America/New_York" ) as date_created,
+  time( created_date, "America/New_York" ) as time_created,
   unique_key as id,
   agency,
   agency_name,

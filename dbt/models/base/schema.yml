@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: clean_data
+    description: Cleaned up source data from the OpenData API.
+    tests:
+      - dbt_utils.recency:
+          datepart: day
+          field: datetime_created
+          interval: 1
+    
+    columns:      
+        - name: datetime_created
+          description: Timestamp complaint was created.
+          tests: 
+            - not_null
+              
+        - name: date_created
+          description: Date complaint was created.
+              
+        - name: time_created
+          description: Time (HH:MM:SS) complaint was created.
+              
+        - name: id
+          description: Unique complaint id.
+              
+        - name: agency
+          description: Agency assigned to the complaint.
+              
+        - name: agency_name
+          description: Full name of the agency.
+              
+        - name: complaint_type
+          description: Type of complaint.
+              
+        - name: complaint_descriptiton
+          description: Description of the complaint.
+              
+        - name: resolution_description
+          description: Description of the resolution.
+              
+        - name: zip_code
+          description: Zip code where incident took place.
+              
+        - name: street
+          description: Street where incident took place.
+              
+        - name: borough
+          description: Borough where incident took place.
+              
+        
