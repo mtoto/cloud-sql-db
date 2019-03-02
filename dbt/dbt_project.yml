@@ -3,7 +3,7 @@ name: 'test_package'
 version: '0.0.1'
 # This setting configures which "profile" dbt uses for this project. Profiles contain
 # database connection information, and should be configured in the  ~/.dbt/profiles.yml file
-profile: '311-datapipeline'
+profile: '311_data_pipelines'
 
 # These configurations specify where dbt should look for different types of files.
 # The `source-paths` config, for example, states that source models can be found
@@ -27,4 +27,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as views (the default). Try changing `view` to `table` below, then re-running dbt
 models:
   test_package:
-    enabled: true # can switch on and off whether u need to run by default
+    base:
+      enabled: true # run by default
+    transformed:
+      enabled: true # run by default

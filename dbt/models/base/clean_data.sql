@@ -1,13 +1,11 @@
-{{
-    config(
-        materialized='incremental'
-    )
-}}
+{{ config(materialized='incremental') }}
+
 
 select 
+  
   datetime(created_date, "America/New_York") as datetime_created,
-  date( created_date, "America/New_York" ) as date_created,
-  time( created_date, "America/New_York" ) as time_created,
+  date(created_date, "America/New_York") as date_created,
+  time(created_date, "America/New_York") as time_created,
   unique_key as id,
   agency,
   agency_name,
@@ -20,5 +18,6 @@ select
 from `dbt-sql.311raw.data` 
 
 {% if is_incremental() %}
-  where created_date > (select max(timestamp_created) from {{ this }})
+  where datetime(created_date, "America/New_York") > (select max(datetime_created) 
+                                                      from {{ this }})
 {% endif %}

@@ -1,8 +1,5 @@
-{{
-    config(
-        materialized='incremental'
-    )
-}}
+{{ config(materialized='incremental') }}
+
 
 with clean_data as (
   select *
