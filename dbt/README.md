@@ -1,9 +1,4 @@
-### dbt models for [your org/project name]
+## dbt models 
 
----
-- [What is dbt](https://dbt.readme.io/docs/overview)?
-- Read the [dbt viewpoint](https://dbt.readme.io/docs/viewpoint)
-- [Installation](https://dbt.readme.io/docs/installation)
-- Join the [chat](http://ac-slackin.herokuapp.com/) on Slack for live questions and support.
+This directory contains an experimental dbt package for the [311 Service Calls dataset I load into BigQuery](http://tamaszilagyi.com/blog/2019/2019-02-10-serverless/). For an in-depth description of what's in here, please refer to the [blog post I have written about dbt](http://tamaszilagyi.com/blog/2019/2019-03-05-dbt/) or have a look at the [official documentation](https://dbt.readme.io/docs/overview).
 
----
